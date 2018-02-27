@@ -1,2 +1,76 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-banner">
+ <div class="row">
+  <div class="col-xs-12 col-sm-4">
+    <h1>Locomotiv'</h1>
+    <h3>Vous developpez une idée, vous voulez allez plus loin?</h3>
+    <h3>Acrochez-vous à une locomotiv'</h3>
+    <h5>en partenariat avec <%= image_tag "logo.png", height: 30 %></h5>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+  </div>
+  <div class="col-xs-12 col-sm-3 little-box"><br>
+    <%= image_tag "clapping_white.png", height: 50 %>
+    Encourager projets<br><br>
+    <%= form_for(:user, :url => session_path(:user)) do |f| %>
+    <%= f.text_field :email %><br><br>
+    <%= f.password_field :password %><br><br>
+    <%= f.submit 'Recevoir mes jetons', class:"btn btn-info" %>
+    <% end %>
+    <hr>
+    <%= link_to root_path do %>
+    <%= image_tag "publish.png", height: 30 %>
+    <strong>Publier mon projet</strong>
+    <% end %>
+    <br><br>
+  </div>
+  <div class="col-xs-12 col-sm-1">
+  </div>
+</div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <br>
+
+      <%= image_tag "locomotiv.png", height: 50 %>
+      Donnez de la vitesse à vos projets
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 text-center">
+      <%= image_tag "clapping.png", height: 100 %>
+      <p>Recevez les encouragements des autres étudiants, grâce à nos jetons mensuels gratuits!</p>
+    </div>
+    <div class="col-xs-12 col-sm-4 text-center">
+      <%= image_tag "medal.png", height: 100 %>
+      <p>Inspirez-vous! Challenger vos projets entre vous! Suivez d'autres projets...</p>
+    </div>
+    <div class="col-xs-12 col-sm-4 text-center">
+      <%= link_to accompagner_path do  %>
+      <%= image_tag "rocket.png", height: 100 %>
+      <p>Poussez vos projets grâce à l'appui de vos proches et d'autres acteurs qui accompagneront le developpement de votre projet</p>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <br>
+
+      Les derniers projets à découvrir...
+      <div class="row">
+        <% @projects.each do |project| %>
+        <div class="col-xs-12 col-sm-3">
+          <%= project.name  %><br>
+          <span><%= project.domain  %></span>
+
+        </div>
+        <% end %>
+      </div>
+      <hr>
+    </div>
+
+
+  </div>
+
