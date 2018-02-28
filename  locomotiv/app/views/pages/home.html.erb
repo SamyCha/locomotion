@@ -1,16 +1,20 @@
+<% content_for(:description) do %>
+Donnez de la vitesse à vos projets grâce à locomotiv
+<% end %>
+
 <div class="home-banner">
  <div class="row">
   <div class="col-xs-12 col-sm-4">
     <h1>Locomotiv'</h1>
     <h3>Vous developpez une idée, vous voulez allez plus loin?</h3>
-    <h3>Acrochez-vous à une locomotiv'</h3>
+    <h3>Acrochez-vous à locomotiv'</h3>
     <h5>en partenariat avec <%= image_tag "logo.png", height: 30 %></h5>
   </div>
   <div class="col-xs-12 col-sm-4">
   </div>
   <div class="col-xs-12 col-sm-3 little-box"><br>
     <%= image_tag "clapping_white.png", height: 50 %>
-    Encourager projets<br><br>
+    Encourager des projets<br><br>
     <%= form_for(:user, :url => session_path(:user)) do |f| %>
     <%= f.text_field :email %><br><br>
     <%= f.password_field :password %><br><br>

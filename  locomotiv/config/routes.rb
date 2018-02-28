@@ -1,21 +1,8 @@
 Rails.application.routes.draw do
-  get 'projects/new'
 
-  get 'projects/create'
+  resources :projects
 
-  get 'projects/edit'
-
-  get 'projects/destroy'
-
-  get 'projects/index'
-
-  get 'projects/update'
-
-  get 'projects/show'
-
-get 'accompagner' => 'pages#accompagner'
-
-
+  get 'accompagner' => 'pages#accompagner'
 
   devise_for :users
   root to: 'pages#home'
